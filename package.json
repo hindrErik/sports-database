@@ -1,0 +1,12 @@
+{
+  "name": "sports-database",
+  "version": "1.0.0",
+  "description": "Sports database with teams, matches, and events",
+  "main": "database.js",
+  "scripts": {
+    "start": "node database.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^8.7.0"
+  }
+} 
