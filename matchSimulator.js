@@ -27,8 +27,8 @@ function createMatch() {
     const status = 'in_progress';
 
     const result = db.prepare(`
-        INSERT INTO matches (home_team_id, away_team_id, match_date, stadium, status)
-        VALUES (?, ?, ?, ?, ?)
+        INSERT INTO matches (home_team_id, away_team_id, match_date, stadium, status, score_home, score_away)
+        VALUES (?, ?, ?, ?, ?, 0, 0)
     `).run(homeTeamId, awayTeamId, matchDate, stadium, status);
 
     return {
@@ -79,6 +79,7 @@ function simulateMatch() {
 
         // Generujeme minimálně 3 góly
         for (let i = 0; i < 3; i++) {
+            // Nastavuji pravděpodobnost vstřelení gólu na 50%, ale toto nastavení závisí na datech, která nejsou součástí zadání.
             const teamId = Math.random() < 0.5 ? homeTeamId : awayTeamId;
             addEvent(matchId, teamId, 'goal', getRandomMinute());
         }
