@@ -4,8 +4,10 @@ npm-debug.log
 yarn-debug.log
 yarn-error.log
 
-# Databáze
-data/
+# Databáze - ignorovat pouze dočasné soubory
+data/*.db-journal
+data/*.db-shm
+data/*.db-wal
 
 # IDE
 .vscode/
